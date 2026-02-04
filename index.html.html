@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday</title>
+
+<style>
+body{
+  margin:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(135deg,#3f51b5,#e91e63);
+  font-family:Arial;
+}
+
+.card{
+  background:white;
+  width:320px;
+  padding:20px;
+  border-radius:20px;
+  text-align:center;
+  box-shadow:0 10px 25px rgba(0,0,0,.3);
+}
+
+h1{color:#e91e63;}
+
+.photo-box{
+  width:160px;
+  height:160px;
+  border-radius:50%;
+  margin:15px auto;
+  overflow:hidden;
+  animation:glow 2s infinite alternate;
+}
+
+.photo-box img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  background:#fff;
+}
+@keyframes glow{
+  from{box-shadow:0 0 10px #ff4081;}
+  to{box-shadow:0 0 30px #ff80ab;}
+}
+
+input{
+  width:90%;
+  padding:8px;
+  margin:5px 0;
+  border-radius:10px;
+  border:1px solid #ccc;
+  text-align:center;
+}
+
+button{
+  margin-top:10px;
+  padding:10px 20px;
+  border:none;
+  border-radius:20px;
+  background:#e91e63;
+  color:white;
+  cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <h1 id="title">🎉 Happy Birthday 🎉</h1>
+
+  <!-- PHOTO IS HERE -->
+  <div class="photo-box">
+    <img src="photo.png" alt="Birthday Photo">
+  </div>
+
+  <input id="name" value="Abigail">
+  <input id="age" value="15">
+
+  <p id="msg">Click Celebrate 🎊</p>
+
+  <button onclick="go()">Celebrate</button>
+</div>
+
+<script>
+function go(){
+  let n=document.getElementById("name").value;
+  let a=document.getElementById("age").value;
+  document.getElementById("title").innerText="🎂 Happy Birthday "+n+" 🎂";
+  document.getElementById("msg").innerText="Happy "+a+"th Birthday! 🎉✨";
+}
+</script>
+
+</body>
+</html>
